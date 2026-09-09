@@ -1,0 +1,172 @@
+/* 1. Updated Google Fonts import to fetch Noto Sans along with Varela Round */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap");
+@import "tailwindcss";
+
+/* 2. Enable Class-Based Dark Mode in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 3. Theme Configurations & Design Tokens */
+@theme {
+
+  --breakpoint-sm: 320px;
+  --breakpoint-md: 750px;   
+  --breakpoint-md2: 780px;   
+  --breakpoint-lg: 1025px;  
+  --breakpoint-lg1: 1024px;  
+
+  /* Set Noto Sans as the default body font (--font-sans) */
+  --font-sans: "Noto Sans", sans-serif;
+  --font-display: "Noto Sans", sans-serif;
+  --font-varela: "Varela Round", sans-serif;
+
+  /* Font Sizes & Line Heights */
+  --text-1xl: 1.75rem;
+  --leading-11: 2.75rem;
+  --leading-12: 3rem;
+  --leading-13: 3.25rem;
+  --leading-14: 3.5rem;
+
+  /* Primary Color Palette (Pink) */
+  --color-primary-50: var(--color-pink-50);
+  --color-primary-100: var(--color-pink-100);
+  --color-primary-200: var(--color-pink-200);
+  --color-primary-300: var(--color-pink-300);
+  --color-primary-400: var(--color-pink-400);
+  --color-primary-500: var(--color-pink-500);
+  --color-primary-600: var(--color-pink-600);
+  --color-primary-700: var(--color-pink-700);
+  --color-primary-800: var(--color-pink-800);
+  --color-primary-900: var(--color-pink-900);
+  --color-primary-950: var(--color-pink-950);
+
+  /* Custom Gradient Colors */
+  --color-gradientnav-950: rgba(26, 32, 44);
+  --color-gradientnav-200: rgba(26, 32, 44, 0.2);
+}
+
+/* 4. Base Styles */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font-sans); /* Guarantees Noto Sans applies globally */
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+}
+
+h1 {
+  @apply text-2xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-9 lg:text-5xl lg:leading-13;
+}
+
+h2 {
+  @apply mb-1 text-xl font-bold leading-7 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-8 lg:text-3xl lg:leading-9;
+}
+
+h3 {
+  @apply mb-1 text-lg font-semibold leading-7 text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-7 lg:text-2xl lg:leading-8;
+}
+
+h4 {
+  @apply text-base font-medium leading-6 text-gray-900 dark:text-gray-100 sm:text-lg sm:leading-7 lg:text-xl lg:leading-7;
+}
+
+p {
+  @apply text-gray-700 text-justify max-w-none dark:text-gray-200 whitespace-pre-line;
+}
+
+a {
+  @apply text-gray-900 dark:text-white hover:text-blue-300 dark:hover:text-blue-300 transition-colors duration-200;
+}
+
+
+.author-bio a {
+  color: var(--color-blue-400); 
+  transition: color 0.15s ease-in-out;
+}
+
+.author-bio a:hover {
+  color: var(--color-blue-800); 
+}
+
+
+@utility list {
+  @apply text-blue-400!
+  hover:text-blue-300! dark:hover:text-blue-300! transition-colors duration-200;
+}
+
+
+@utility date {
+  @apply text-gray-600! dark:text-white/70!
+}
+
+@utility wavy {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-primary-400);
+  text-underline-offset: 4px;
+}
+
+/* 5. Custom Utility Classes */
+@utility title-link {
+  color: var(--color-gray-600);
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-gray-800);
+  }
+}
+
+/* 6. Typography Plugin Overrides */
+@layer components {
+  /* Light Mode */
+  .prose a {
+    color: var(--color-primary-500);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-primary-600);
+    }
+
+    code {
+      color: var(--color-primary-400);
+    }
+  }
+
+  .prose h1,
+  .prose h2 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-gray-800);
+  }
+
+  .prose h3 {
+    font-weight: 600;
+    color: var(--color-gray-500);
+  }
+
+  /* Dark Mode */
+  .dark .prose a {
+    color: var(--color-primary-500);
+
+    &:hover {
+      color: var(--color-primary-400);
+    }
+  }
+
+  .dark .prose h1,
+  .dark .prose h2 {
+    color: var(--color-gray-100);
+  }
+
+  .dark .prose h3 {
+    color: var(--color-gray-200);
+  }
+}
