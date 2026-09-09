@@ -30,7 +30,7 @@ class ExpertiseToolInline(admin.TabularInline):
 @admin.register(ExpertiseCategory)
 class ExpertiseCategoryAdmin(admin.ModelAdmin):
     inlines = [ExpertiseToolInline]
-    list_display = ['expertise',]
+    list_display = ['id','expertise',]
     
 @admin.register(WorkExperience)
 class WorkExperienceAdmin(admin.ModelAdmin):
