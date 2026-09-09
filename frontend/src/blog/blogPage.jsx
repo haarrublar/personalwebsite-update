@@ -44,8 +44,7 @@ export default function BlogPage() {
             {/* Header / Title */}
             <div className="py-8 border-b-2 border-b-gray-200 text-center w-full">
                 {post.publish && (
-                    <p className="text-sm text-gray-500 mt-2 text-center">
-                        Published on{" "}
+                    <p className="text-sm text-gray-500 mt-2 text-center!">
                         {new Date(post.publish).toLocaleDateString("en-US", {
                             month: "long",
                             day: "numeric",

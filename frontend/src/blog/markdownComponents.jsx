@@ -8,17 +8,17 @@ export const markdownComponents = {
         </h1>
     ),
     h2: ({ children }) => (
-        <h2 className="mb-2 mt-6 text-xl font-bold leading-7 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-8 lg:text-3xl lg:leading-9">
+        <h2 className="mb-4 mt-6 text-xl font-bold leading-7 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-8 lg:text-3xl lg:leading-9">
             {children}
         </h2>
     ),
     h3: ({ children }) => (
-        <h3 className="mb-2 mt-4 text-lg font-semibold leading-7 text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-7 lg:text-2xl lg:leading-8">
+        <h3 className="mb-4 mt-4 text-lg font-semibold leading-7 text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-7 lg:text-2xl lg:leading-8">
             {children}
         </h3>
     ),
     h4: ({ children }) => (
-        <h4 className="mb-2 mt-4 text-base font-medium leading-6 text-gray-900 dark:text-gray-100 sm:text-lg sm:leading-7 lg:text-xl lg:leading-7">
+        <h4 className="mb-4 mt-4 text-base font-medium leading-6 text-gray-900 dark:text-gray-100 sm:text-lg sm:leading-7 lg:text-xl lg:leading-7">
             {children}
         </h4>
     ),
@@ -86,7 +86,7 @@ code: ({ node, inline, className, children, ...props }) => {
     if (inline || (!match && !isMultiLine)) {
         return (
             <code
-                className="bg-gray-100 dark:bg-gray-800 text-primary-500 px-1.5 py-0.5 rounded text-sm font-mono"
+                className="bg-gray-100 dark:bg-gray-800 text-blue-500 px-1.5 py-0.5 rounded text-sm font-mono"
                 {...props}
             >
                 {children}
