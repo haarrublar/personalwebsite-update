@@ -22,6 +22,7 @@ export default function PhotoGrid() {
         { id: 5, content: "Card 05" },
     ]);
     const [isFading, setIsFading] = useState(false);
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
 
     const moveRight = useCallback(() => {
         if (isFading) return;
@@ -56,6 +57,22 @@ export default function PhotoGrid() {
     }, [isFading]);
 
     useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape") {
+                setSelectedPhoto(null);
+            }
+        };
+
+        if (selectedPhoto) {
+            window.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [selectedPhoto]);
+
+    useEffect(() => {
         const getPhotos = async () => {
             try {
                 const photosData = await get_author_info();
@@ -74,12 +91,14 @@ export default function PhotoGrid() {
     }, []);
 
     useEffect(() => {
+        if (selectedPhoto) return;
+
         const interval = setInterval(() => {
             moveLeft();
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [moveLeft]);
+    }, [moveLeft, selectedPhoto]);
 
     const getImageUrl = (imagePath) => {
         if (!imagePath || imagePath === "none") return null;
@@ -102,7 +121,8 @@ export default function PhotoGrid() {
                                 return (
                                     <div
                                         key={photoItem.id || index}
-                                        className={`flex justify-center items-center overflow-hidden h-70 transition-all duration-300 ease-in-out transform ${
+                                        onClick={() => setSelectedPhoto(photoItem)}
+                                        className={`flex justify-center items-center overflow-hidden h-70 transition-all duration-300 ease-in-out transform cursor-pointer ${
                                             isFading
                                                 ? "opacity-0 scale-95"
                                                 : "opacity-100 scale-100"
@@ -135,6 +155,42 @@ export default function PhotoGrid() {
                     </div>
                 </div>
             </div>
+
+            {selectedPhoto && (
+                <div className="fixed inset-0 z-50 flex items-center justify-between p-4 md:p-8 bg-black/80">
+                    <button
+                        onClick={() => setSelectedPhoto(null)}
+                        className="absolute top-4 right-4 z-10 p-2 text-white hover:text-gray-300 transition-colors"
+                        aria-label="Close full screen view"
+                    >
+                        <i className="fa-solid fa-xmark text-3xl"></i>
+                    </button>
+
+                    <button
+                        onClick={moveLeft}
+                        className="z-10 shrink-0 p-3 text-white hover:text-gray-300 transition-colors"
+                        aria-label="Previous image"
+                    >
+                        <i className="fa-solid fa-chevron-left text-3xl md:text-5xl"></i>
+                    </button>
+
+                    <div className="flex-1 flex justify-center items-center h-full px-4 overflow-hidden">
+                        <img
+                            src={getImageUrl(items[0]?.photo || selectedPhoto.photo)}
+                            alt="Author photo full view"
+                            className="max-w-full max-h-full object-contain"
+                        />
+                    </div>
+
+                    <button
+                        onClick={moveRight}
+                        className="z-10 shrink-0 p-3 text-white hover:text-gray-300 transition-colors"
+                        aria-label="Next image"
+                    >
+                        <i className="fa-solid fa-chevron-right text-3xl md:text-5xl"></i>
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

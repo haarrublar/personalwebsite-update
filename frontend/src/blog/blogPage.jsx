@@ -57,10 +57,8 @@ export default function BlogPage() {
                 </h1>
             </div>
 
-            {/* Layout Container */}
             <div className="flex flex-col md:flex-row mx-auto justify-center items-center md:items-start mt-6">
                 
-                {/* Author Sidebar */}
                 <div className="md:w-1/3 w-full py-2 md:flex md:flex-col md:items-center md:divide-y-2 md:divide-gray-200">
                     <div className="w-full md:justify-start border-b-2 border-b-gray-200 md:border-b-0">
                         <div className="my-6 flex items-center space-x-3">
@@ -88,19 +86,17 @@ export default function BlogPage() {
                     </div>
                 </div>
 
-                {/* Main Article Content */}
-                <div className="md:w-2/3 md:px-8">
-                    {post.image && (
-                        <div className="mb-6 rounded-lg overflow-hidden shadow-md">
+                <div className="md:w-2/3 md:px-8 grid grid-cols-1 px-0">
+                    {/* {post.image && (
+                        <div className="sm:hidden md:block w-full mx-auto my-5">
                             <img
                                 src={getImageUrl(post.image)}
                                 alt={post.slug}
-                                className="w-full h-auto max-h-96 object-cover"
+                                className="img-fluid w-full object-cover shadow-xl"
                             />
                         </div>
-                    )}
+                    )} */}
 
-                    {/* Markdown Renderer with Custom CSS Mapping */}
                     <ReactMarkdown 
                         remarkPlugins={[remarkGfm]} 
                         components={markdownComponents}
