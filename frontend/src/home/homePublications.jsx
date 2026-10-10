@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { get_publication } from "../utils/api";
 
+const HIDDEN_ON_HOME = [
+    "Functional data learning using convolutional neural networks",
+];
+
 const getYear = (publication) =>
     publication.year || (publication.date ? parseInt(publication.date.split("-")[0], 10) : 0);
 
 export default function HomePublications() {
     const [publications, setPublications] = useState([]);
-    const HIDDEN_ON_HOME = [
-        "Functional data learning using convolutional neural networks",
-    ];
 
     useEffect(() => {
         const loadPublications = async () => {
@@ -16,6 +17,7 @@ export default function HomePublications() {
             const sortedData = [...(publicationData || [])]
                 .filter((publication) => !HIDDEN_ON_HOME.includes(publication.title))
                 .sort((a, b) => getYear(b) - getYear(a));
+            setPublications(sortedData);
         };
 
         loadPublications();
