@@ -1,122 +1,42 @@
-import axios from "axios";
-
-const BASE_URL = 'http://127.0.0.1:8000/api';
-const AUTHORINFO_URL = `${BASE_URL}/author-info`
-const AUTHORSTUDY_URL = `${BASE_URL}/author-studies`
-const EXPERTISE_URL = `${BASE_URL}/expertise`
-const WORKEXPERIENCE_URL = `${BASE_URL}/work-experience`
-const ACADEMICPARTICIPATION_URL = `${BASE_URL}/academic-participation`
-const PROJECT_URL = `${BASE_URL}/project`
-const PUBLICATION_URL = `${BASE_URL}/publication`
-const POST_URL = `${BASE_URL}/post`
-
+import { AuthorStudies } from "../static/author-studies";
+import { AuthorInfo } from "../static/author-info";
+import { Expertise } from "../static/expertise";
+import { WorkExperience } from "../static/work-experience";
+import { AcademicParticipation } from "../static/academic-participation";
+import { Post } from "../static/post";
+import { Publication } from "../static/publication";
+import { Project } from "../static/project";
 
 export const get_author_info = async () => {
-    try {
-        const response = await axios.get(
-            AUTHORINFO_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+    return AuthorInfo
 }
 
 export const get_study = async () => {
-    try {
-        const response = await axios.get(
-            AUTHORSTUDY_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+    return AuthorStudies
 }
 
 export const get_expertise = async () => {
-    try {
-        const response = await axios.get(
-            EXPERTISE_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+    return Expertise
 }
-
 
 export const get_work_experience = async () => {
-    try {
-        const response = await axios.get(
-            WORKEXPERIENCE_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+    return WorkExperience
 }
-
-
 
 export const get_academic_participation = async () => {
-    try {
-        const response = await axios.get(
-            ACADEMICPARTICIPATION_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+    return AcademicParticipation
+}
+
+export const get_project = async () => {
+    return Project
 }
 
 
-export const get_project= async () => {
-    try {
-        const response = await axios.get(
-            PROJECT_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+export const get_publication = async () => {
+    return Publication
 }
 
 
-export const get_publication= async () => {
-    try {
-        const response = await axios.get(
-            PUBLICATION_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
-}
-
-
-export const get_post= async () => {
-    try {
-        const response = await axios.get(
-            POST_URL, {
-                withCredentials: false
-            }
-        );
-        return response.data
-    } catch (error) {
-        return error 
-    }
+export const get_post = async () => {
+    return Post
 }
