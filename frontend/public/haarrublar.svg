@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Human-robot interaction and representation theory">
+  <title>HRI and representation theory</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#22252b"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(0,14)">
+  <!-- a poset with one minimal element mapping to two maximal ones: robot and human -->
+  <g stroke="#22252b" stroke-width="6" stroke-linecap="round" fill="none" marker-end="url(#arrow)">
+    <line x1="114" y1="186" x2="80" y2="134"/>
+    <line x1="142" y1="186" x2="176" y2="134"/>
+  </g>
+
+  <!-- minimal element -->
+  <circle cx="128" cy="204" r="18" fill="#fbf1cf" stroke="#22252b" stroke-width="6"/>
+
+  <!-- robot node -->
+  <rect x="28" y="58" width="72" height="72" rx="16" fill="#ffffff" stroke="#1f3f9a" stroke-width="6"/>
+  <circle cx="52" cy="92" r="7" fill="#2f6fe0"/>
+  <circle cx="76" cy="92" r="7" fill="#2f6fe0"/>
+
+  <!-- human node -->
+  <circle cx="192" cy="94" r="36" fill="#ffffff" stroke="#22252b" stroke-width="6"/>
+  <circle cx="180" cy="92" r="6" fill="#22252b"/>
+  <circle cx="204" cy="92" r="6" fill="#22252b"/>
+  </g>
+</svg>
