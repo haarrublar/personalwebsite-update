@@ -6,12 +6,16 @@ const getYear = (publication) =>
 
 export default function HomePublications() {
     const [publications, setPublications] = useState([]);
+    const HIDDEN_ON_HOME = [
+        "Functional data learning using convolutional neural networks",
+    ];
 
     useEffect(() => {
         const loadPublications = async () => {
             const publicationData = await get_publication();
-            const sortedData = [...(publicationData || [])].sort((a, b) => getYear(b) - getYear(a));
-            setPublications(sortedData);
+            const sortedData = [...(publicationData || [])]
+                .filter((publication) => !HIDDEN_ON_HOME.includes(publication.title))
+                .sort((a, b) => getYear(b) - getYear(a));
         };
 
         loadPublications();
@@ -37,6 +41,12 @@ export default function HomePublications() {
                                 <span className="flex absolute -left-3.5 justify-center items-center w-7 h-7 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                                     <i className="fa-solid fa-book-open fa-sm dark:text-white"></i>
                                 </span>
+
+                                {publication.role && (
+                                    <div className="mb-1">
+                                        <p className="text-sm">{publication.role}</p>
+                                    </div>
+                                )}
 
                                 <div>
                                     {publication.url ? (
