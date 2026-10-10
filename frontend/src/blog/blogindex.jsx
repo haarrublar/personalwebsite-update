@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { get_post } from "../utils/api";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "";
 
 export default function Blogindex() {
 	const [posts, setPosts] = useState([]);

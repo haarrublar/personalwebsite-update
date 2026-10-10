@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import { get_post } from "../utils/api";
 import markdownComponents from "./markdownComponents";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "";
 
 
 export default function BlogPage() {
@@ -58,7 +58,7 @@ export default function BlogPage() {
             </div>
 
             <div className="flex flex-col md:flex-row mx-auto justify-center items-center md:items-start mt-6">
-                
+
                 <div className="md:w-1/3 w-full py-2 md:flex md:flex-col md:items-center md:divide-y-2 md:divide-gray-200">
                     <div className="w-full md:justify-start border-b-2 border-b-gray-200 md:border-b-0">
                         <div className="my-6 flex items-center space-x-3">
@@ -97,8 +97,8 @@ export default function BlogPage() {
                         </div>
                     )} */}
 
-                    <ReactMarkdown 
-                        remarkPlugins={[remarkGfm]} 
+                    <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
                         components={markdownComponents}
                     >
                         {post.body}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get_author_info, get_study } from "../utils/api";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "";
 
 export default function PresentationCard() {
 	const [author, setAuthor] = useState(null);

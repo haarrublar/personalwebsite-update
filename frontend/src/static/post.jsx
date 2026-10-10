@@ -2,7 +2,7 @@ export const Post = [
     {
         "id": 4,
         "title": "Tensorflow: LSTM Text Classification with emoji [MASK]",
-        "image": "/media/None/blogPhoto_HORfitE.jpg",
+        "image": "/media/None/blogPhoto.jpg",
         "slug": "tensorflow-lstm-text-classification-with-emoji-mask",
         "author": 2,
         "summary": "This tiny project emerged from the need of the company I am working for to analyze big dataset information regarding customer experiences and comments during several processes, from initial contact to post-sale.",
@@ -22,7 +22,7 @@ export const Post = [
     {
         "id": 3,
         "title": "Django Website with Tailwind CSS, Bootstrap, JavaScript, and GSAP",
-        "image": "/media/None/blogPhoto_MVEkEug.jpg",
+        "image": "/media/None/blogPhoto.jpg",
         "slug": "django-website-with-tailwind-css-bootstrap-javascript-and-gsap",
         "author": 2,
         "summary": "Introducing a replicable step-by-step guidance for generating this blog site. Django, tailwinds, GSAP, and javascript are used, and nginx and gunicorn for as server's gateways.",

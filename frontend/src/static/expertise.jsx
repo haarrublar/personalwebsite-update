@@ -45,25 +45,25 @@ export const Expertise = [
                 "id": 32,
                 "tool_name": "python",
                 "tool_url": "https://www.python.org/",
-                "tool_image": "/media/images/python_logo_ycjjiSg_u02GehB.svg"
+                "tool_image": "/media/images/python_logo.svg"
             },
             {
                 "id": 33,
                 "tool_name": "R",
                 "tool_url": "https://www.r-project.org/",
-                "tool_image": "/media/images/R_logo_kDH33YE_YqjM8ur.svg"
+                "tool_image": "/media/images/R_logo.svg"
             },
             {
                 "id": 34,
                 "tool_name": "Tensorflow",
                 "tool_url": "https://www.tensorflow.org/",
-                "tool_image": "/media/images/ft_logo_tF9NUuf_ohtyky7.svg"
+                "tool_image": "/media/images/ft_logo.svg"
             },
             {
                 "id": 35,
                 "tool_name": "BI",
                 "tool_url": "https://www.microsoft.com/en-us/power-platfor",
-                "tool_image": "/media/images/bi_logo_VNlIVL7_nnQ4gU2.svg"
+                "tool_image": "/media/images/bi_logo.svg"
             }
         ]
     },
@@ -76,13 +76,13 @@ export const Expertise = [
                 "id": 36,
                 "tool_name": "PostgreSQL",
                 "tool_url": "https://www.postgresql.org/",
-                "tool_image": "/media/images/postgresql_logo_r0Zyewq_iAF4TYq.svg"
+                "tool_image": "/media/images/postgresql_logo.svg"
             },
             {
                 "id": 37,
                 "tool_name": "MySQL",
                 "tool_url": "https://www.mysql.com/",
-                "tool_image": "/media/images/mysql_logo_4aEjXB2_27ZCCvX.svg"
+                "tool_image": "/media/images/mysql_logo.svg"
             }
         ]
     },
@@ -95,13 +95,13 @@ export const Expertise = [
                 "id": 38,
                 "tool_name": "Tailwinds",
                 "tool_url": "https://tailwindcss.com/",
-                "tool_image": "/media/images/tailwindcss_logo_ZtiBuho_ls1EXjq.svg"
+                "tool_image": "/media/images/tailwindcss_logo.svg"
             },
             {
                 "id": 39,
                 "tool_name": "Bootstrap",
                 "tool_url": "https://getbootstrap.com/",
-                "tool_image": "/media/images/bootstrap_logo_paHTf3o_03Hr3Wo.svg"
+                "tool_image": "/media/images/bootstrap_logo.svg"
             }
         ]
     }

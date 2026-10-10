@@ -3,7 +3,7 @@ import { get_author_info } from "../utils/api";
 import Expertise from "../home/expertise";
 import Timeline from "./timeline/timeline";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "";
 
 export default function AboutIndex() {
 	const [author, setAuthor] = useState(null);

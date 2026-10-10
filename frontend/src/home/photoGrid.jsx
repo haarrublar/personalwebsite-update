@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { get_author_info } from "../utils/api";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "";
 
 const shuffleArray = (array) => {
     const shuffled = [...array];
@@ -122,11 +122,10 @@ export default function PhotoGrid() {
                                     <div
                                         key={photoItem.id || index}
                                         onClick={() => setSelectedPhoto(photoItem)}
-                                        className={`flex justify-center items-center overflow-hidden h-70 transition-all duration-300 ease-in-out transform cursor-pointer ${
-                                            isFading
+                                        className={`flex justify-center items-center overflow-hidden h-70 transition-all duration-300 ease-in-out transform cursor-pointer ${isFading
                                                 ? "opacity-0 scale-95"
                                                 : "opacity-100 scale-100"
-                                        } ${index > 0 ? "hidden md:block" : "block"}`}
+                                            } ${index > 0 ? "hidden md:block" : "block"}`}
                                     >
                                         <img
                                             src={imgUrl}

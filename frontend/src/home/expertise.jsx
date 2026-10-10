@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get_expertise } from "../utils/api";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "";
 
 export default function Expertise() {
 
@@ -16,7 +16,7 @@ export default function Expertise() {
                 console.error(error);
             }
         };
-        
+
         getExpertise();
     }, []);
 
@@ -44,12 +44,12 @@ export default function Expertise() {
                                     return imgUrl && (
                                         <li key={tool.id || tool.tool_name} className="flex items-center">
                                             <a href={tool.tool_url || "#"}>
-                                                <img 
-                                                    src={imgUrl} 
-                                                    className="img-fluid rounded d-block mx-auto" 
-                                                    alt={tool.tool_name || "..."} 
-                                                    title={tool.tool_name} 
-                                                    style={{ height: '50px' }} 
+                                                <img
+                                                    src={imgUrl}
+                                                    className="img-fluid rounded d-block mx-auto"
+                                                    alt={tool.tool_name || "..."}
+                                                    title={tool.tool_name}
+                                                    style={{ height: '50px' }}
                                                 />
                                             </a>
                                         </li>
@@ -67,12 +67,12 @@ export default function Expertise() {
                                     return imgUrl && (
                                         <li key={tool.id || tool.tool_name} className="flex items-center">
                                             <a href={tool.tool_url || "#"}>
-                                                <img 
-                                                    src={imgUrl} 
-                                                    className="img-fluid rounded d-block mx-auto" 
-                                                    alt={tool.tool_name || "..."} 
-                                                    title={tool.tool_name} 
-                                                    style={{ height: '50px' }} 
+                                                <img
+                                                    src={imgUrl}
+                                                    className="img-fluid rounded d-block mx-auto"
+                                                    alt={tool.tool_name || "..."}
+                                                    title={tool.tool_name}
+                                                    style={{ height: '50px' }}
                                                 />
                                             </a>
                                         </li>

@@ -1,7 +1,7 @@
 export const AuthorInfo = [
     {
         "author_name": "Harrinson Arrubla",
-        "author_role": "Mathematician | Statistician & Data Specialist | HRI Researcher",
+        "author_role": "Mathematician | Statistician&Data Specialist | HRI Researcher",
         "author_email": "harrubla.96@gmail.com",
         "author_git_user": "haarrublar",
         "author_country": "Canada",
