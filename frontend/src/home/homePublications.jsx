@@ -38,12 +38,6 @@ export default function HomePublications() {
                                     <i className="fa-solid fa-book-open fa-sm dark:text-white"></i>
                                 </span>
 
-                                {publication.role && (
-                                    <div className="mb-1">
-                                        <p className="text-sm">{publication.role}</p>
-                                    </div>
-                                )}
-
                                 <div>
                                     {publication.url ? (
                                         <a href={publication.url} target="_blank" rel="noopener noreferrer">
