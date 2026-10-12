@@ -76,7 +76,7 @@ export default function PresentationCard() {
 						<div className="w-7 flex justify-center items-center shrink-0 dark:text-white">
 							<i className="fab fa-google-scholar fa-lg"></i>
 						</div>
-						<a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+						<a href="https://scholar.google.com/citations?user=kHJo3K0AAAAJ">Google Scholar</a>
 					</div>
 				</div>
 
