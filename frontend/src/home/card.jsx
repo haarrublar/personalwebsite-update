@@ -93,6 +93,8 @@ export default function PresentationCard() {
 								</h4>
 								<div>{degree.is_current && <span className="bg-blue-100 text-blue-800 text-sm font-medium py-0.5 px-2 rounded dark:bg-blue-200 dark:text-blue-800">CURRENTLY</span>}</div>
 
+								{degree.position && <p className="mt-2 text-sm font-medium">{degree.position}</p>}
+
 								<p className="my-2 text-sm" style={{ lineHeight: 1.25 }}>
 									{degree.university}, {degree.is_current ? "Present" : degree.graduation_date?.split("-")[0]}
 								</p>

@@ -27,6 +27,7 @@ export const AuthorStudies = [
         "field_of_study": "Computer Science",
         "university": "University of Manitoba",
         "graduation_date": null,
-        "is_current": true
+        "is_current": true,
+        "position": "Research Assistant @ HCI Lab, UofM"
     }
 ]
