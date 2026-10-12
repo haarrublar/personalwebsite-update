@@ -72,6 +72,12 @@ export default function PresentationCard() {
 						</div>
 						<a href="https://github.com/haarrublar">{author?.author_git_user}</a>
 					</div>
+					<div className="my-2 flex items-center gap-3">
+						<div className="w-7 flex justify-center items-center shrink-0 dark:text-white">
+							<i className="fab fa-google-scholar fa-lg"></i>
+						</div>
+						<a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+					</div>
 				</div>
 
 				<div className="opacity-100 mt-6">
